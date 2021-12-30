@@ -11,7 +11,7 @@ import { Response } from './interfaces/response';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pruebaAngPersona';
+  title = 'Persons';
   persons: Persona[];
   person: Persona;
   thatLooks: number = 0;
@@ -56,8 +56,8 @@ export class AppComponent {
 
   createPerson() {
     const newPerson = {
-      nombre: 'Jorgue Luis',
-      apellido: 'Borges',
+      nombre: 'Borrar',
+      apellido: 'Borrar',
       edad: 41
     };
     
@@ -66,30 +66,27 @@ export class AppComponent {
     this.personaService.createPerson(newPerson).subscribe((data) => {
       this.response = data;
     })
-
-    
   }
 
   updatePerson() {
     const updatePerson = {
-      id: 9,
-      nombre: 'NombreEditado',
-      apellido: 'Martines',
-      edad: 22
+      nombre: 'Eric',
+      apellido: 'Pachon',
+      edad: 21
     };
 
     this.thatLooks = 3;  // Person updated.
 
-    this.personaService.updatePerson(updatePerson, 9).subscribe((data) => {
-      console.log(data);
+    this.personaService.updatePerson(updatePerson, 19).subscribe((data) => {
+      this.response = data;
     })
   }
 
   deletePerson() {
     this.thatLooks = 4;  // Person eliminated.
 
-    this.personaService.deletePerson(7).subscribe(data => {
-      console.log(data);
+    this.personaService.deletePerson(18).subscribe((data) => {
+      this.response = data;
     });
   }
 }

@@ -1,5 +1,60 @@
+.mainContainer {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.mainTitle {
+    border: 2px solid #4d4a4a;
+    text-align: center;
+    padding: 1.2em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 .btn-primary {
     width: 16em;
     height: 8em;
     margin: 1em;
+    background: transparent;
+    border: 1px solid #221e1e;
+    border-radius: 1em;
+    cursor: pointer;
+    background-color: #42429e;
+    color: #faebd7;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: 'Pushster', cursive;
+    transition: 0.5s;
+}
+
+.btn-primary:hover {
+    background-color: #faebd7;
+    color: #42429e;
+
+}
+
+.contentContainer { 
+    display: flex;
+    justify-content: center;
+}
+
+.mainTable {
+    border-spacing: 2em;
+}
+
+.mainTable--th, .mainTable--td {
+    border-bottom: 1px solid #662020;
+}
+
+.mainTable--th {
+    width: 16em;
+}
+
+.mainTable--td {
+    text-align: center;
+    padding: 0.5em;
 }

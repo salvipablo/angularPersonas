@@ -28,15 +28,12 @@ export class PersonaService {
     return this.http.post(path, person);
   }
 
-  updatePerson(person: Persona, id: number) {
-
-    //http://localhost:8080/personas/editar/12?nombre=Jeremias&apellido=Amestoy&edad=35
-
+  updatePerson(person: Persona, id: number): Observable<any> {
     const path = `personas/editar/${id}?nombre=${person.nombre}&apellido=${person.apellido}&edad=${person.edad}`;
     return this.http.put<Task>(path, person);
   }
 
-  deletePerson(id: number) {
+  deletePerson(id: number): Observable<any> {
     const path = `personas/borrar/${id}`;
     return this.http.delete(path);
   }

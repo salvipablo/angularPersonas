@@ -1,29 +1,65 @@
-<h1>Welcome to {{ title }}</h1>
+<div class="mainContainer">
+    <h1 class="mainTitle">Welcome to {{ title }}</h1>
 
-<div>
-    <button class="btn-primary" (click)="getAllPersons()">Obtener Personas</button>
-    <button class="btn-primary" (click)="getPerson()">Obtener Persona</button>
-    <button class="btn-primary" (click)="createPerson()">Crear Persona</button>
-    <button class="btn-primary" (click)="updatePerson()">Actualizar Persona</button>
-    <button class="btn-primary" (click)="deletePerson()">Eliminar Persona</button>
-</div>
+    <div class="buttons">
+        <button class="btn-primary" (click)="getAllPersons()">Obtener Personas</button>
+        <button class="btn-primary" (click)="getPerson()">Obtener Persona</button>
+        <button class="btn-primary" (click)="createPerson()">Crear Persona</button>
+        <button class="btn-primary" (click)="updatePerson()">Actualizar Persona</button>
+        <button class="btn-primary" (click)="deletePerson()">Eliminar Persona</button>
+    </div>
 
-<div *ngIf="thatLooks == 0">
-    <ul>
-        <li *ngFor="let person of persons">{{person.nombre}}-{{person.apellido}}</li>
-    </ul>
-</div>
+    <!-- Mostrar todas las personas personas -->
+    <div class="contentContainer" *ngIf="thatLooks == 0">
+        <table class="mainTable">
+            <tr>
+                <th class="mainTable--th">ID</th>
+                <th class="mainTable--th">NOMBRE</th>
+                <th class="mainTable--th">APELLIDO</th>
+                <th class="mainTable--th">EDAD</th>
+            </tr>
+            <tr *ngFor="let person of persons">
+                <td class="mainTable--td">{{person.id}}</td>
+                <td class="mainTable--td">{{person.nombre}}</td>
+                <td class="mainTable--td">{{person.apellido}}</td>
+                <td class="mainTable--td">{{person.edad}}</td>
+            </tr>
+        </table>
+    </div>
 
-<div *ngIf="thatLooks == 1">
-    <ul>
-        <li>ID de la persona: {{person.id}}</li>
-        <li>Nombre: {{person.nombre}}</li>
-        <li>Apellido: {{person.apellido}}</li>
-        <li>Edad: {{person.edad}}</li>
-    </ul>
-</div>
+    <!-- Buscar persona -->
+    <div class="contentContainer"    *ngIf="thatLooks == 1">
+        <table class="mainTable">
+            <tr>
+                <th class="mainTable--th">ID</th>
+                <th class="mainTable--th">NOMBRE</th>
+                <th class="mainTable--th">APELLIDO</th>
+                <th class="mainTable--th">EDAD</th>
+            </tr>
+            <tr>
+                <td class="mainTable--td">{{person.id}}</td>
+                <td class="mainTable--td">{{person.nombre}}</td>
+                <td class="mainTable--td">{{person.apellido}}</td>
+                <td class="mainTable--td">{{person.edad}}</td>
+            </tr>
+        </table>
+    </div>
 
-<div *ngIf="thatLooks == 2">
-    <p>Codigo de estado de operacion: {{response.statusCode}}.</p>
-    <p>Descripcion de operacion: {{response.description}}.</p>
+    <!-- crear persona -->
+    <div *ngIf="thatLooks == 2">
+        <p>Codigo de estado de operacion: {{response.statusCode}}.</p>
+        <p>Descripcion de operacion: {{response.description}}.</p>
+    </div>
+
+    <!-- Eliminar persona -->
+    <div *ngIf="thatLooks == 3">
+        <p>Codigo de estado de operacion: {{response.statusCode}}.</p>
+        <p>Descripcion de operacion: {{response.description}}.</p>
+    </div>
+
+    <!-- Eliminar persona -->
+    <div *ngIf="thatLooks == 4">
+        <p>Codigo de estado de operacion: {{response.statusCode}}.</p>
+        <p>Descripcion de operacion: {{response.description}}.</p>
+    </div>
 </div>
